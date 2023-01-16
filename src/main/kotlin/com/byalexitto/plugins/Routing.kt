@@ -1,5 +1,6 @@
 package com.byalexitto.plugins
 
+import com.byalexitto.routes.departamentoRoutes
 import io.ktor.server.routing.*
 import io.ktor.server.response.*
 import io.ktor.server.http.content.*
@@ -9,11 +10,14 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
-            call.respondText("Hello World!")
+            call.respondText("Servidor creado por Byalexitto")
         }
         // Static plugin. Try to access `/static/index.html`
-        static("/static") {
+     /*   static("/static") {
             resources("static")
-        }
+        }*/
+
     }
+
+    departamentoRoutes()
 }
